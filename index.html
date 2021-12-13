@@ -6,8 +6,9 @@
         let num = Math.floor(Math.random() * 11) +1 ;
         let guess = prompt("Guess a number between 1 and 10");
         let counter = 0;
-        let goIt = false;
+        let gotIt = false;
         let feedback ="";
+        let times = "times";//plural
 
         /*
         counter = counter + 1
@@ -21,33 +22,36 @@
 
 
         */
-
-
         while(gotIt == false){
          counter++;
         if(guess == num){
 
-            feedback = `The number was ${num} and you guessed ${counter} times!`
-            alert(feedback);
-                 alert("You guessed right!");
-                 gotIt = true;
-        }else if(num < guess){//higher
-            guess = prompt("That was incorrectly. Guess higher!");
 
-        }else if(num > guess){//lower
-            guess = prompt("That was incorrectly. Guess lower!");
+            if(counter==1){
+                times = "time";
+            }
+
+            feedback = `The number was ${num} and you guessed ${counter} ${times}!`;
+            alert(feedback);
+             
+             gotIt = true;
+             }else if(num > guess){//higher
+                guess = prompt("That was incorrectly. Guess higher!");
+
+            }else if(num < guess){//lower
+                guess = prompt("That was incorrectly. Guess lower!");
 
 
 
 
             }else{
                 alert("You should not see this");
-                guess = prompt("That was incorrectly. Guess again!");
+               
             }
 
         }
 
-        alert(num);
+      
     </script>
 </body>
 </html>
